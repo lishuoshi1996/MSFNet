@@ -3,7 +3,7 @@ import os
 import numpy as np
 from skimage import measure
 
-tag = 'indoor'
+tag = 'outdoor'
 image_path = './SOTS/'+tag +'/hazy'
 label_path = './SOTS/'+tag +'/clear'
 
@@ -72,6 +72,3 @@ for filename in filepath:
 psnr_mean = sum(psnrs) / len(psnrs)
 ssim_mean = sum(ssims) / len(ssims)
 print('PSNR:%f,SSIM:%f'%(psnr_mean,ssim_mean))
-
-psnr_mean,ssim_mean = to_psnr_ssim(image_path,label_path)
-print(tag+model+':PSNR:%f,SSIM:%f'%(psnr_mean,ssim_mean))
